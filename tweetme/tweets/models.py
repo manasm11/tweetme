@@ -13,4 +13,4 @@ class TweetModel(models.Model):
     def __str__(self):
         if self.content:
             return _get_text_from_field(self.content)
-        return _get_text_from_field(self.image)
+        return _get_text_from_field(self.image)Password
