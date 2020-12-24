@@ -1,0 +1,23 @@
+- [ ] Users
+  - [ ] Register
+  - [ ] Login
+  - [ ] Logout
+  - [ ] Profile
+    - [ ] Image
+    - [ ] Text
+    - [ ] Follow Button
+  - [ ] Feed
+    - [ ] User's Feed only ?
+    - [ ] User + who they follow ?
+- [ ] Tweets
+  - [ ] Creating
+    - [ ] Text
+    - [ ] Image
+  - [ ] Delete
+  - [ ] Retweet
+- [ ] Following/Followers
+#### Long term todos
+- [ ] Notifications
+- [ ] Direct Messaging
+- [ ] Explore
+  - [ ] Hashtags

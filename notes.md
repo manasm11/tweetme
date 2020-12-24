@@ -7,4 +7,3 @@ source (find . -name activate.fish)
 clear
 ```
 
-43 seconds
