@@ -7,3 +7,4 @@ source (find . -name activate.fish)
 clear
 ```
 
+2:22
