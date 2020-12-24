@@ -1,9 +1,9 @@
 from django.db import models
 
 def _get_text_from_field(field):
-    # assert isinstance(field, None)
-    print(type(field))
-    return field[:32]
+    if isinstance(field, str):
+        return field[:32]
+    return str(field)
 
 # Create your models here.
 class TweetModel(models.Model):

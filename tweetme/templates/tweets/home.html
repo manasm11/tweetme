@@ -1,0 +1,39 @@
+{% extends 'base.html' %} {% block body %}
+<h1> Welcome to tweetme 2 </h1>
+<div id="tweets-div">LOADING...</div>
+<script>
+    method = 'GET'
+    url = 'tweets/'
+    responseType = 'json'
+
+    xhr = new XMLHttpRequest()
+    xhr.responseType = responseType
+    xhr.open(method, url)
+    xhr.onload = function() {
+        const serverResponse = xhr.response
+        var listedItems = serverResponse.response
+        console.log("xhr.response = " + xhr.response)
+        render_tweets(listedItems)
+    }
+    xhr.send();
+    console.log("home.html working");
+
+    function render_tweets(items) {
+        tweets_div = document.getElementById("tweets-div")
+        final_tweets_element = ""
+        items.map((item) => final_tweets_element += `<h4>${item.content}</h4><div><button>Likes ${item.likes}</button></div>`);
+        tweets_div.innerHTML = final_tweets_element
+    }
+</script>
+<!-- <style>
+     :root {
+        --primary-color: rgb(173, 204, 0);
+        --color: rgb(12, 180, 62);
+    }
+    
+    body {
+        background-color: var(--primary-color);
+        color: var(--color);
+    }
+</style> -->
+{% endblock body %}
