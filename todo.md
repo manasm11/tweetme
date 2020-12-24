@@ -15,9 +15,10 @@
     - [ ] Image
   - [ ] Delete
   - [ ] Retweet
+  - [ ] Liking
 - [ ] Following/Followers
 #### Long term todos
 - [ ] Notifications
 - [ ] Direct Messaging
 - [ ] Explore
-  - [ ] Hashtags
+  - [ ] Ha☑shtags
