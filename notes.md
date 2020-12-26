@@ -7,4 +7,8 @@ source (find . -name activate.fish)
 clear
 ```
 
-2:22
+- [ ] Trailing slash observations
+  - [ ] Don't apply trailing slash in urls.py
+  - [ ] When using XMLHttpResponse, apply trailing slash.
+  - [ ] When creating POST form in html, apply trailing slash.
+2:36

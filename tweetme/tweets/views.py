@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse, Http404
+from django.shortcuts import Http404, HttpResponse, redirect, render
 from django.http import JsonResponse
 from .models import TweetModel
 from .forms import TweetForm
@@ -21,16 +21,26 @@ def tweet_detail_view(request, tweet_id,  *args, **kwargs):
 
 def tweet_list_view(response, *args, **kwargs):
   data = {
-    'response':[{'id':x.id, 'content':x.content, 'isUser':False, 'likes':random.randint(0,999)} for x in TweetModel.objects.all()]
+    'isUser':False,
+    'response':[x.serialize() for x in TweetModel.objects.all()]
   }
   return JsonResponse(data)
 
 def tweet_create_view(request, *args, **kwargs):
-    template_name = "tweets/create.html"
+    template_name = "components/form.html"
     context = {}
+    print("*****post data id ", request.POST)
+    next_url = request.POST.get("next") or None
     form = TweetForm(request.POST or None)
     if form.is_valid():
-        form.save()
+        obj = form.save(commit=False)
+        # Play with onj
+        obj.save()
+        if request.is_ajax():
+            print(obj)
+            return JsonResponse(obj.serialize(), status=201)
+        if next_url:
+            return redirect("/")
         form = TweetForm()
     context['form'] = form
     return render(request, template_name, context=context)
