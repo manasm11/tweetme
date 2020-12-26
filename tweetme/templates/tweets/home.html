@@ -33,6 +33,7 @@
             if (xhr.status === 201) {
                 newPostData = JSON.parse(xhr.response)
                 addTweetElement(newPostData)
+                postForm.content.value = ""
             }
 
             // load_tweets();
@@ -58,6 +59,7 @@
             var listedItems = serverResponse.response
             console.log("xhr.response = " + xhr.response)
             _render_tweets(listedItems)
+            postForm.textarea = ''
         }
         xhr.send();
     }
