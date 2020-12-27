@@ -20,4 +20,7 @@ clear
 - [ ] 201 : Created Successfully
 - [ ] 200 : Action done Successfully
 - [ ] 500 : Server me kuchh jhol hua !!!
-- [ ] 
+
+
+### Javascript
+- [ ] hljs : Code highlighting and copy functionality.
