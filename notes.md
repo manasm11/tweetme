@@ -12,3 +12,12 @@ clear
   - [ ] When using XMLHttpResponse, apply trailing slash.
   - [ ] When creating POST form in html, apply trailing slash.
 2:36
+
+### HTTP Code
+- [ ] 403 : Require Login
+- [ ] 401 : Unauthorized
+- [ ] 400 : Invalid request
+- [ ] 201 : Created Successfully
+- [ ] 200 : Action done Successfully
+- [ ] 500 : Server me kuchh jhol hua !!!
+- [ ] 

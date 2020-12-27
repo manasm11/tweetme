@@ -3,9 +3,9 @@
 <div>
     <form action="create-tweet/" method="POST" id="post-form">
         {% csrf_token %}
-        <input type="hidden" name="next" value="/">
-        <textarea name="content" placeholder="Your tweet" cols="30" rows="10"></textarea>
-        <submit type="submit" class="btn btn-primary" id="post-btn">Post</input>
+        <input type="hidden" name="next" value="/" />
+        <input name="content" required placeholder="Your tweet" cols="30" rows="10" type='textarea' />
+        <input type="submit" class="btn btn-primary" id="post-btn" value='Post' />
     </form>
 </div>
 <div id="tweets-div">LOADING...</div>
@@ -18,11 +18,11 @@
 
     function handlePostBtnClick(event) {
         event.preventDefault();
-        const myFormData = new FormData(postForm)
-            // for (var item of myFormData) {
-            //     console.log(item);
-            // }
-            // console.log(event)
+        const myFormData = new FormData(postForm);
+        // for (var item of myFormData) {
+        //     console.log(item);
+        // }
+        // console.log(event)
         const url = postForm.getAttribute("action")
         const method = postForm.getAttribute("method")
         const xhr = new XMLHttpRequest();
@@ -34,6 +34,8 @@
                 newPostData = JSON.parse(xhr.response)
                 addTweetElement(newPostData)
                 postForm.content.value = ""
+            } else {
+                console.log(xhr.statusText, xhr.status)
             }
 
             // load_tweets();
@@ -56,8 +58,8 @@
         xhr.open(method, url)
         xhr.onload = function() {
             const serverResponse = xhr.response
-            var listedItems = serverResponse.response
-            console.log("xhr.response = " + xhr.response)
+            var listedItems = serverResponse
+                // console.log("xhr.response = " + xhr.response)
             _render_tweets(listedItems)
             postForm.textarea = ''
         }
