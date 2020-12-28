@@ -24,3 +24,12 @@ clear
 
 ### Javascript
 - [ ] hljs : Code highlighting and copy functionality.
+
+### Production
+- [ ] To serve static files, use AWS-S3 and preferably cloud-front.
+- [ ] To use react static files in django, copy the build->static folder to the django-root directory.
+  - [ ] Also add in settings.py:
+  ```py
+  STATICFILES_DIRS =[ os.path.join(BASE_DIR, 'static')]
+  STATIC_ROOT = os.path.join(BASE_DIR, 'static-root')
+  ```

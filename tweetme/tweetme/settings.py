@@ -25,7 +25,7 @@ SECRET_KEY = '%%)^fu1=z_%15dxa&)i4cn6css^u72oto71%s*yn(#%$ka+yqm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # THIRD-PARTY
     'rest_framework',
+    'corsheaders',
     # INTERNAL
     'tweets',
 ]
@@ -46,6 +47,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -141,3 +143,6 @@ APPEND_SLASH = True
 LOGIN_URL = 'login/'
 MAX_TWEET_LENGTH = 240
 TWEET_ACTION_OPTIONS = ['like', 'unlike', 'retweet']
+
+# CORS Headers
+CORS_ORIGIN_ALLOW_ALL = True

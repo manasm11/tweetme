@@ -1,0 +1,1 @@
+export const tweets_url = 'http://localhost:8000/tweets/?format=json'
